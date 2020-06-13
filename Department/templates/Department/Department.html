@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+{% block body %}
+	<body>
+		
+	
+	
+	<aside id="colorlib-hero" class="breadcrumbs">
+		<div class="flexslider">
+			<ul class="slides">
+				{% load static %}
+		   	<img src="{%  static 'images/img_bg_6.jpg' %}">
+		   		<div class="overlay"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 col-md-pull-2 slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Our <strong>Departments</strong></h1>
+									<h2>html5 Bootstrap Templates Made by colorlib.com</h2>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		  	</ul>
+	  	</div>
+	</aside>
+	<div class="colorlib-departments">
+		<div class="container">
+			<div class="row">
+				{% for Department in Deparment_List %}
+				<div class="col-md-4">
+					<div class="department-wrap animate-box">
+						<div class="grid-1 col-md-6" style="background-image: url('/static/images/img_bg_6.jpg');"></div>
+						<div class="grid-2 col-md-6">
+							<div class="desc">
+								<h2><a href="departments-single.html">{{Department}}</a></h2>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,</p>
+								<div class="department-info">
+									<div class="block">
+										<h2><a href="doctors-single.html">Detial</a></h2>
+										<span>{{Department.detial}}</span>
+									</div>
+									<div class="block">
+										<h2><a href="departments-single.html">Total Bed</a></h2>
+										<span>{{Department.bedcount}}</span>
+									</div>
+									<div class="block">
+										<h2><a href="doctors.html">Available bed</a></h2>
+										<span>{{Department.avalidbed}}</span>
+									</div>
+									<div class="block">
+										<h2><a href="doctors.html">Reserved beds</a></h2>
+										<span>{{Department.outbed}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock body %}
