@@ -1,1 +1,1 @@
-web: gunicorn Quarantine.wsgi --log-file – 
+web: gunicorn Quarantine.wsgi --log-file -
